@@ -1,0 +1,19 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "'My sec project on Hexlet'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Memnaya/frontend-project-44.git"
+  },
+  "author": "'Karina Buga memnaya@mail.ru (https://github.com/Memnaya)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Memnaya/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/Memnaya/frontend-project-44#readme"
+}
