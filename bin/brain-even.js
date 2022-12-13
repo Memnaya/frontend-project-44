@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import parityGame from '../src/parity.js';
+// eslint-disable-next-line import/no-named-as-default
+import parityGame from '../src/games/parity.js';
 
 parityGame();
