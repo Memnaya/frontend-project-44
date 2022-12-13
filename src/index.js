@@ -57,3 +57,22 @@ export const getRandomExepcion = (str) => {
     }
 return console.log(`Congratulations, ${nameUser}!`);
 }; */
+
+export const nod = (biggestNum, smallerNum) => {
+  let newBiggestNum = biggestNum;
+  let newSmallerNum = smallerNum;
+  if (biggestNum < smallerNum) {
+    const rememberNum = newBiggestNum;
+    newBiggestNum = newSmallerNum;
+    newSmallerNum = rememberNum;
+  }
+  while (newBiggestNum !== newSmallerNum) {
+    newBiggestNum -= newSmallerNum;
+    if (newBiggestNum < newSmallerNum) {
+      const i = newBiggestNum;
+      newBiggestNum = newSmallerNum;
+      newSmallerNum = i;
+    }
+  }
+  return newBiggestNum;
+};
