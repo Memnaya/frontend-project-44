@@ -9,7 +9,7 @@ const parityGame = () => {
     return userName;
   };
   const name = checkUserName();
-  console.log("Answer 'yes' if number even otherwise answer 'no'.");
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   let i = 0;
 
