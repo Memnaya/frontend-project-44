@@ -10,7 +10,10 @@ export const greeting = () => {
   return userName;
 };
 
-export const randomNum = () => Math.floor(Math.random() * 50);
+export const getRandomNumber = (max) => {
+  const number = Math.round(Math.random() * max);
+  return number;
+};
 
 export const getRandomString = (firstNum, secondNum) => {
   const operandList = ['+', '-', '*'];
@@ -75,4 +78,27 @@ export const nod = (biggestNum, smallerNum) => {
     }
   }
   return newBiggestNum;
+};
+
+export const createProgression = (number) => {
+  const minLength = 5;
+  const maxLength = 10;
+  const rangeOfProg = Math.round(Math.random() * (maxLength - minLength) + minLength);
+  const step = getRandomNumber(7);
+  let numsOfProg = number;
+  const arrOfProg = [];
+  arrOfProg.push(numsOfProg);
+  let n = 1;
+  while (n < rangeOfProg) {
+    numsOfProg += step;
+    arrOfProg.push(numsOfProg);
+    n += 1;
+  }
+  const randomIndex = Math.round(Math.random() * (rangeOfProg - 1));
+  const correctAnswer = arrOfProg[randomIndex];
+  arrOfProg.splice(randomIndex, 1, '..');
+  const arrOfStr = arrOfProg.join(' ');
+  const result = [];
+  result.push(arrOfStr, correctAnswer);
+  return result;
 };
