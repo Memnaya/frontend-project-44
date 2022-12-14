@@ -1,13 +1,13 @@
 import readlineSync from 'readline-sync';
-import { greeting, randomNum, nod } from '../index.js';
+import { greeting, getRandomNumber, nod } from '../index.js';
 
 const getGcdOfNums = () => {
   const userName = greeting();
   console.log('Find the greatest common divisor of given numbers.');
   let i = 0;
   while (i < 3) {
-    const randomNum1 = randomNum(); // 40
-    const randomNum2 = randomNum(); // 30
+    const randomNum1 = getRandomNumber(50);
+    const randomNum2 = getRandomNumber(50);
     console.log(`Question: ${randomNum1} ${randomNum2}`);
     const answer = readlineSync.question('Your answer: ');
     const correctAnswer = nod(randomNum1, randomNum2);

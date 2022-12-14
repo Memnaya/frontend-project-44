@@ -2,7 +2,7 @@
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named
 import {
-  greeting, randomNum, getRandomString, getRandomExepcion,
+  greeting, getRandomNumber, getRandomString, getRandomExepcion,
 } from '../index.js';
 
 const calculate = () => {
@@ -13,8 +13,8 @@ const calculate = () => {
   console.log('What is the result of the expression?');
   let i = 0;
   while (i < 3) {
-    const randomNum1 = randomNum();
-    const randomNum2 = randomNum();
+    const randomNum1 = getRandomNumber(50);
+    const randomNum2 = getRandomNumber(50);
     const numsStr = getRandomString(randomNum1, randomNum2);
 
     console.log(`Question: ${numsStr}`);
