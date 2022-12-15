@@ -15,9 +15,7 @@ const getPrime = () => {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was 'no'.`);
-      console.log(`Let's try again, ${userName}!`);
-      i -= i;
+      return console.log(`${answer} is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
     }
   }
   return console.log(`Congratulations, ${userName}!`);

@@ -16,9 +16,7 @@ const getProgression = () => {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      console.log(`Let's try again, ${userName}!`);
-      i -= i;
+      return console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${userName}!`);
     }
   }
   return console.log(`Congratulations, ${userName}!`);

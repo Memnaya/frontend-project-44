@@ -24,9 +24,7 @@ const calculate = () => {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      console.log(`Let's try again, ${nameUser}!`);
-      i -= i;
+      return console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${nameUser}!`);
     }
   }
   return console.log(`Congratulations, ${nameUser}!`);
