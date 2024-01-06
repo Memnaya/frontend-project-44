@@ -25,7 +25,6 @@ export const app = (properties) => {
       console.log('Correct');
     } else {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".\nLet's try again, ${name}!`);
-      break;
     }
   }
   return countOfCorrectAnswers === 3 ? console.log(`Congratulations, ${name}!`) : null;
