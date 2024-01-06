@@ -14,20 +14,18 @@ export const app = (properties) => {
   console.log(`Hello, ${name}!`);
   console.log(descriptions);
 
-  let countOfCorrectAnswers = 0;
   for (let i = 0; i < 3; i += 1) {
     const [task, answer] = gameLogic();
     console.log(`Question: ${task}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (checkAnswer(userAnswer, answer)) {
-      countOfCorrectAnswers += 1;
       console.log('Correct');
     } else {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".\nLet's try again, ${name}!`);
+      return console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".\nLet's try again, ${name}!`);
     }
   }
-  return countOfCorrectAnswers === 3 ? console.log(`Congratulations, ${name}!`) : null;
+  return console.log(`Congratulations, ${name}!`);
 };
 
 export const getRandomNumber = (max = 100) => Math.floor(Math.random() * max);
