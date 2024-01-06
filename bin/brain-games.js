@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import checkUserName from '../src/cli.js';
+import greeting from '../src/cli.js';
 
-checkUserName();
+greeting();

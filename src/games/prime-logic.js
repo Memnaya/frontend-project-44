@@ -1,24 +1,19 @@
-import readlineSync from 'readline-sync';
-import { greeting, getRandomNumber, primeNumbersCheck } from '../index.js';
+import { app, getRandomNumber } from '../index.js';
 
-const getPrime = () => {
-  const userName = greeting();
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
-  let i = 0;
-  while (i < 3) {
-    const randomNum = getRandomNumber(100);
-    console.log(`Question: ${randomNum}`);
-    const answer = readlineSync.question('Your answer: ');
-    const correctAnswer = primeNumbersCheck(randomNum);
-    if ((answer === 'yes' && correctAnswer === true) || (answer === 'no' && correctAnswer === false)) {
-      console.log('Correct!');
-      i += 1;
-    } else {
-      return console.log(`${answer} is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
+const isPrime = (num) => {
+  for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
+    if (num % i === 0) {
+      return 'no';
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  return 'yes';
 };
 
-export default getPrime;
+const gameLogic = () => {
+  const task = getRandomNumber();
+  return [task, isPrime(task)];
+};
+
+export default () => app([description, gameLogic]);

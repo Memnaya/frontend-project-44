@@ -10,8 +10,7 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
-  "description": "'My sec project on Hexlet'",
-  "main": "index.js",
+  "description": "Small console application with computing games",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

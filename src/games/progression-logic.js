@@ -1,25 +1,33 @@
-import readlineSync from 'readline-sync';
-import { greeting, getRandomNumber, createProgression } from '../index.js';
+import { app, getRandomNumber } from '../index.js';
 
-const getProgression = () => {
-  const userName = greeting();
+const description = 'What number is missing in the progression?';
 
-  console.log('What number is missing in the progression?');
-  let i = 0;
-  while (i < 3) {
-    const randomNum = getRandomNumber(30);
-    const strOfNumsAndCorrectAnswer = createProgression(randomNum);
-    console.log(`Question: ${strOfNumsAndCorrectAnswer[0]}`);
-    const answer = readlineSync.question('Your answer: ');
-    const correctAnswer = strOfNumsAndCorrectAnswer[1];
-    if (Number(answer) === correctAnswer) {
-      console.log('Correct!');
-      i += 1;
-    } else {
-      return console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${userName}!`);
-    }
+const createProgression = (number) => {
+  const minLength = 5;
+  const maxLength = 10;
+  const rangeOfProg = Math.round(Math.random() * (maxLength - minLength) + minLength);
+  const step = getRandomNumber(7);
+  let numsOfProg = number;
+  const arrOfProg = [];
+  arrOfProg.push(numsOfProg);
+  let n = 1;
+  while (n < rangeOfProg) {
+    numsOfProg += step;
+    arrOfProg.push(numsOfProg);
+    n += 1;
   }
-  return console.log(`Congratulations, ${userName}!`);
+  const randomIndex = Math.round(Math.random() * (rangeOfProg - 1));
+  const correctAnswer = arrOfProg[randomIndex];
+  arrOfProg.splice(randomIndex, 1, '..');
+  const arrOfStr = arrOfProg.join(' ');
+  const result = [];
+  result.push(arrOfStr, correctAnswer);
+  return result;
 };
 
-export default getProgression;
+const gameLogic = () => {
+  const progression = createProgression(getRandomNumber(30));
+  return [progression[0], progression[1]];
+};
+
+export default () => app([description, gameLogic]);

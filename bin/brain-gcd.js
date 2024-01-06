@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import getGcdOfNums from '../src/games/gcd.js';
+import getGcd from '../src/games/gcd-logic.js';
 
-getGcdOfNums();
+getGcd();
