@@ -21,9 +21,10 @@ const gcd = (biggestNum, smallerNum) => {
   return newBiggestNum;
 };
 const gameLogic = () => {
-  const biggestNum = getRandomNumber(50);
-  const smallerNum = getRandomNumber(50);
-  return [`${biggestNum} ${smallerNum}`, gcd(biggestNum, smallerNum)];
+  const num1 = getRandomNumber(50);
+  const num2 = getRandomNumber(50);
+  const task = `${num1} ${num2}`;
+  return [task, gcd(num1, num2)];
 };
 
 export default () => app([description, gameLogic]);
